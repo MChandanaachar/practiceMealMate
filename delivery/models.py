@@ -10,6 +10,6 @@ class Customer(models.Model):
 
 class Restaurant(models.Model):
     name=models.CharField(max_length=20)
-    picture=models.CharField(max_length=200,default="https://cdn4.vectorstock.com/i/1000x1000/65/58/restaurant-logo-design-idea-vector-46986558.jpg")
+    picture=models.CharField(max_length=500,default="https://cdn4.vectorstock.com/i/1000x1000/65/58/restaurant-logo-design-idea-vector-46986558.jpg")
     cuisine=models.CharField(max_length=200)
     rating=models.FloatField()

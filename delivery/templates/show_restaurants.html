@@ -6,10 +6,10 @@
     <title>restaurants List</title>
 </head>
 <body>
- <!-- {{restaurants}} -->
+    <!-- {{restaurants}} -->
      <h1>My Favorite Restaurants</h1>
     <table border="1">
-<thead>
+        <thead>
             <tr>
                 <th>Picture</th>
                 <th>Name</th>
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             {% for restaurant in restaurants %}
-           <tr>
+            <tr>
                 <td>
                     <img src="{{ restaurant.picture }}" alt="Picture of {{ restaurant.name }}" width="100">
                 </td>
@@ -28,16 +28,15 @@
                 <td>{{ restaurant.cuisine }}</td>
                 <td>{{ restaurant.rating }}/5</td>
                 <td>
-                    <a href="{% url 'open_update_restaurant'
-                     restaurant.id %}">Upadate Restaurant</a>
+                    <a href="{% url 'open_update_restaurant' restaurant.id %}">Upadate Restaurant</a>
                     <br>
-                    <form method="POST" action="{% url 'delete_restaurant' restaurant.id %}" style="display:inline;">
+                    <form method="POST" action="{% url 'delete_restaurant' restaurant.id %}">
                     {% csrf_token %}
                         <button type="submit">Delete Restaurant</button>
                     </form>
-                    <!-- <a href="#">delete Restaurant</a>
+                    <!-- <a href="{% url 'delete_restaurant' restaurant.id %}">delete Restaurant</a> -->
                     <br>
-                    <a href="#">Upadate Menu</a> -->
+                    <a href="{% url 'open_update_menu' restaurant.id %}">Upadate Menu</a>
                     <br>
                 </td>
             </tr>
